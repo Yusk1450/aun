@@ -1,7 +1,4 @@
 
-let screenWidth = 400;
-let screenHeight = 400;
-
 let classifier;
 
 let soundModel = 'https://teachablemachine.withgoogle.com/models/-iIY_ZyN4/';
@@ -16,7 +13,7 @@ function preload()
 
 function setup()
 {
-	createCanvas(screenWidth, screenHeight);
+	createCanvas(windowWidth, windowHeight);
 
 	classifier.classify(gotResult);
 
@@ -34,9 +31,14 @@ function draw()
 	// let spectrum = fft.analyze();
 }
 
+function windowResized()
+{
+	resizeCanvas(windowWidth, windowHeight);
+}
+
 function gotResult(error, results)
 {
-	if (results[0]['confidence'] > 0.85)
+	if (results[0]['confidence'] > 0.90)
 	{
 		console.log(results);
 		$('.result').html(results[0]['label']+'('+results[0]['confidence']+')');
