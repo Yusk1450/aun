@@ -32,11 +32,10 @@ function draw()
 	background(220);
 
 	let spectrum = fft.analyze();
-
-	console.log(spectrum);
 }
 
 function gotResult(error, results)
 {
+	console.log(results[0]);
 }
 
