@@ -4,7 +4,7 @@ let screenHeight = 400;
 
 let classifier;
 
-let soundModel = 'https://teachablemachine.withgoogle.com/models/Qzsrq6QQp/';
+let soundModel = 'https://teachablemachine.withgoogle.com/models/-iIY_ZyN4/';
 
 let mic;
 // let fft;
