@@ -38,8 +38,8 @@ function gotResult(error, results)
 {
 	if (results[0]['confidence'] > 0.85)
 	{
-		console.log(results[0]['label']);
-		$('.result').html(results[0]['label']);
+		console.log(results);
+		$('.result').html(results[0]['label']+'('+results[0]['confidence']+')');
 	}
 }
 
