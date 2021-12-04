@@ -7,7 +7,7 @@ let classifier;
 let soundModel = 'https://teachablemachine.withgoogle.com/models/Qzsrq6QQp/';
 
 let mic;
-let fft;
+// let fft;
 
 function preload()
 {
@@ -23,15 +23,15 @@ function setup()
 	mic = new p5.AudioIn();
 	mic.start();
 
-	fft = new p5.FFT();
-	fft.setInput(mic);
+	// fft = new p5.FFT();
+	// fft.setInput(mic);
 }
 
 function draw()
 {
 	background(220);
 
-	let spectrum = fft.analyze();
+	// let spectrum = fft.analyze();
 }
 
 function gotResult(error, results)
