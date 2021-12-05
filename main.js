@@ -1,10 +1,10 @@
 
-document.addEventListener('click', function() {
+// document.addEventListener('click', function() {
 	// var audio = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
 	// audio.load();
 	// audio.play();
-	okSnd.play();
-});
+	// okSnd.play();
+// });
 
 
 let classifier;
@@ -21,8 +21,6 @@ function preload()
 {
 	classifier = ml5.soundClassifier(soundModel + 'model.json');
 
-	// okSnd = loadSound('sounds/ok.mp3');
-
 	thinkSnd = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
 	questionSnd = new Audio('./sounds/question.mp3?cb=' + new Date().getTime());
 	okSnd = new Audio('./sounds/ok.mp3?cb=' + new Date().getTime());
@@ -37,8 +35,6 @@ function preload()
 
 function setup()
 {
-	okSnd = loadSound('sounds/ok.mp3');
-
 	createCanvas(windowWidth, windowHeight);
 
 	classifier.classify(gotResult);
@@ -78,7 +74,7 @@ function windowResized()
 function gotResult(error, results)
 {
 	$('.result').html(results[0]['label']+'('+results[0]['confidence']+')').css('color', 'black');
-	if (results[0]['confidence'] > 0.85)
+	if (results[0]['confidence'] > 0.90)
 	{
 		if (results[0]['label'] == 'バックグラウンド ノイズ')
 		{
