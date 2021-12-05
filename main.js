@@ -1,7 +1,7 @@
 
 document.addEventListener('click', function() {
 	var audio = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
-	audio.load();
+	// audio.load();
 	audio.play();
 });
 
@@ -77,25 +77,25 @@ function gotResult(error, results)
 		if (results[0]['label'] == 'think')
 		{
 			var audio = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
-			audio.load();
+			// audio.load();
 			audio.play();
 		}
 		else if (results[0]['label'] == 'question')
 		{
 			var audio = new Audio('./sounds/question.mp3?cb=' + new Date().getTime());
-			audio.load();
+			// audio.load();
 			audio.play();
 		}
 		else if (results[0]['label'] == 'ok')
 		{
 			var audio = new Audio('./sounds/ok.mp3?cb=' + new Date().getTime());
-			audio.load();
+			// audio.load();
 			audio.play();
 		}
 		else if (results[0]['label'] == 'please')
 		{
 			var audio = new Audio('./sounds/please.mp3?cb=' + new Date().getTime());
-			audio.load();
+			// audio.load();
 			audio.play();
 		}
 
