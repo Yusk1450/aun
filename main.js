@@ -80,7 +80,7 @@ function draw()
 	// {
 	// 	image(quietlyImg, windowWidth/2 - 121/2, 448, 121, 127);
 	// }
-	image(quietlyImg, windowWidth/2 - 121/2, windowHeight/2 + 120, 121, 124);
+	image(quietlyImg, windowWidth/2 - 121/2, windowHeight/2 + 45, 121, 124);
 
 	image(bottomImg, 0, windowHeight-(426*(windowWidth/750)), windowWidth, 426*(windowWidth/750));
 
