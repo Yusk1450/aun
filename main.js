@@ -3,8 +3,7 @@ document.addEventListener('click', function() {
 	// var audio = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
 	// audio.load();
 	// audio.play();
-	let song = loadSound('sounds/ok.mp3');
-	song.play();
+	okSnd.play();
 });
 
 
@@ -15,11 +14,19 @@ let soundModel = 'https://teachablemachine.withgoogle.com/models/-iIY_ZyN4/';
 let mic;
 // let fft;
 
+let thinkSnd, questionSnd, okSnd, pleaseSnd;
 let faceImg, topImg, bottomImg, speakImg, quietlyImg;
 
 function preload()
 {
 	classifier = ml5.soundClassifier(soundModel + 'model.json');
+
+	// okSnd = loadSound('sounds/ok.mp3');
+
+	thinkSnd = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
+	questionSnd = new Audio('./sounds/question.mp3?cb=' + new Date().getTime());
+	okSnd = new Audio('./sounds/ok.mp3?cb=' + new Date().getTime());
+	pleaseSnd = new Audio('./sounds/please.mp3?cb=' + new Date().getTime());
 
 	faceImg = loadImage('images/face.png');
 	topImg = loadImage('images/top.png');
@@ -30,6 +37,8 @@ function preload()
 
 function setup()
 {
+	okSnd = loadSound('sounds/ok.mp3');
+
 	createCanvas(windowWidth, windowHeight);
 
 	classifier.classify(gotResult);
@@ -78,27 +87,23 @@ function gotResult(error, results)
 
 		if (results[0]['label'] == 'think')
 		{
-			var audio = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
 			// audio.load();
-			audio.play();
+			thinkSnd.play();
 		}
 		else if (results[0]['label'] == 'question')
 		{
-			var audio = new Audio('./sounds/question.mp3?cb=' + new Date().getTime());
 			// audio.load();
-			audio.play();
+			questionSnd.play();
 		}
 		else if (results[0]['label'] == 'ok')
 		{
-			var audio = new Audio('./sounds/ok.mp3?cb=' + new Date().getTime());
 			// audio.load();
-			audio.play();
+			okSnd.play();
 		}
 		else if (results[0]['label'] == 'please')
 		{
-			var audio = new Audio('./sounds/please.mp3?cb=' + new Date().getTime());
 			// audio.load();
-			audio.play();
+			pleaseSnd.play();
 		}
 
 		console.log(results);
