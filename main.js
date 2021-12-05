@@ -1,8 +1,10 @@
 
 document.addEventListener('click', function() {
-	var audio = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
+	// var audio = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
 	// audio.load();
-	audio.play();
+	// audio.play();
+	let song = loadSound('sounds/ok.mp3');
+	song.play();
 });
 
 
