@@ -1,4 +1,11 @@
 
+document.addEventListener('click', function() {
+	var audio = new Audio('./sounds/think.mp3?cb=' + new Date().getTime());
+	audio.load();
+	audio.play();
+});
+
+
 let classifier;
 
 let soundModel = 'https://teachablemachine.withgoogle.com/models/-iIY_ZyN4/';
